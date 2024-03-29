@@ -5,6 +5,11 @@ import 'package:trail_app/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:trail_app/core/app_export.dart';
 
+import '../../widgets/app_bar/appbar_subtitle.dart';
+import '../../widgets/app_bar/appbar_trailing_iconbutton.dart';
+import '../../widgets/custom_text_form_field.dart';
+TextEditingController shareyourfeelingongrController =
+TextEditingController();
 class FindChallengePageScreen extends StatelessWidget {
   const FindChallengePageScreen({Key? key}) : super(key: key);
 
@@ -21,7 +26,7 @@ class FindChallengePageScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                              padding: EdgeInsets.only(left: 21.h),
+                              padding: EdgeInsets.only(left: 20.h),
                               child: Row(children: [
                                 CustomImageView(
                                     imagePath: ImageConstant.imgEllipse758,
@@ -35,20 +40,23 @@ class FindChallengePageScreen extends StatelessWidget {
                                         style: CustomTextStyles
                                             .labelLargeBlack90013))
                               ])),
-                          SizedBox(height: 9.v),
-                          _buildEight(context),
-                          SizedBox(height: 14.v),
+                          Padding(
+                              padding: EdgeInsets.only(left: 20.h,top: 20.h,bottom: 20.h),
+                            child: Row(children: [
+                              _buildEight(context),
+                            ],),
+                              ),
+
                           Padding(
                               padding: EdgeInsets.only(left: 20.h),
                               child: Text("3 Day Figma design Learn Challenge",
                                   style: theme.textTheme.titleMedium)),
                           SizedBox(height: 9.v),
                           Align(
-                              alignment: Alignment.center,
+                              alignment: Alignment.centerLeft,
                               child: Container(
-                                  width: 323.h,
                                   margin:
-                                      EdgeInsets.only(left: 20.h, right: 31.h),
+                                      EdgeInsets.only(left: 20.h, right: 20.h),
                                   child: RichText(
                                       text: TextSpan(children: [
                                         TextSpan(
@@ -66,8 +74,14 @@ class FindChallengePageScreen extends StatelessWidget {
                           SizedBox(height: 20.v),
                           Divider(),
                           SizedBox(height: 19.v),
+
+
+
+
+
+
                           Padding(
-                              padding: EdgeInsets.only(left: 21.h),
+                              padding: EdgeInsets.only(left: 20.h),
                               child: Row(children: [
                                 CustomImageView(
                                     imagePath: ImageConstant.imgEllipse758,
@@ -76,35 +90,85 @@ class FindChallengePageScreen extends StatelessWidget {
                                     radius: BorderRadius.circular(12.h)),
                                 Padding(
                                     padding: EdgeInsets.only(
-                                        left: 9.h, top: 4.v, bottom: 4.v),
+                                        left: 9.h, top: 4.v, bottom: 3.v),
                                     child: Text("Jyoti Prasad",
                                         style: CustomTextStyles
-                                            .labelLargeBlack900))
+                                            .labelLargeBlack90013))
                               ])),
-                          SizedBox(height: 9.v),
-                          _buildFour(context),
-                          SizedBox(height: 16.v),
                           Padding(
-                              padding: EdgeInsets.only(left: 21.h),
-                              child: Text("3 Day Figma design Learn Challenge",
-                                  style: theme.textTheme.labelLarge)),
-                          SizedBox(height: 4.v),
-                          Container(
-                              width: 281.h,
-                              margin: EdgeInsets.only(left: 21.h, right: 72.h),
-                              child: RichText(
-                                  text: TextSpan(children: [
-                                    TextSpan(
-                                        text:
-                                            "Heyhey.net - Free Download for Games & ApAnd",
-                                        style: theme.textTheme.labelMedium),
-                                    TextSpan(
-                                        text: " Free Download for Games ...",
-                                        style: theme.textTheme.labelMedium)
-                                  ]),
-                                  textAlign: TextAlign.left)),
-                          SizedBox(height: 1.v),
+                            padding: EdgeInsets.only(top: 20.h,bottom: 20.h),
+                            child: Row(children: [
+                                _buildFour(context),
+                            ],),
+                          ),
+
+                Padding(
+                       padding: EdgeInsets.only(left: 21.h),
+                       child: Text("3 Day Figma design Learn Challenge",
+                           style: theme.textTheme.labelLarge)),
+                   SizedBox(height: 4.v),
+                   Container(
+                       width: 281.h,
+                       margin: EdgeInsets.only(left: 21.h, right: 72.h),
+                       child: RichText(
+                           text: TextSpan(children: [
+                             TextSpan(
+                                 text:
+                                     "Heyhey.net - Free Download for Games & ApAnd",
+                                 style: theme.textTheme.labelMedium),
+                             TextSpan(
+                                 text: " Free Download for Games ...",
+                                 style: theme.textTheme.labelMedium)
+                           ]),
+                           textAlign: TextAlign.left)),
+                   SizedBox(height: 1.v),
                           _buildShowChallenge1(context),
+                          SizedBox(height: 20.v),
+
+
+
+
+
+
+                          // Padding(
+                          //     padding: EdgeInsets.only(left: 20.h),
+                          //     child: Row(children: [
+                          //       CustomImageView(
+                          //           imagePath: ImageConstant.imgEllipse758,
+                          //           height: 24.adaptSize,
+                          //           width: 24.adaptSize,
+                          //           radius: BorderRadius.circular(12.h)),
+                          //       Padding(
+                          //           padding: EdgeInsets.only(
+                          //               left: 9.h, top: 4.v, bottom: 4.v),
+                          //           child: Text("Jyoti Prasad",
+                          //               style: CustomTextStyles
+                          //                   .labelLargeBlack900))
+                          //     ])),
+                          // SizedBox(height: 9.v),
+                          // _buildFour(context),
+                          // SizedBox(height: 16.v),
+                          // Padding(
+                          //     padding: EdgeInsets.only(left: 21.h),
+                          //     child: Text("3 Day Figma design Learn Challenge",
+                          //         style: theme.textTheme.labelLarge)),
+                          // SizedBox(height: 4.v),
+                          // Container(
+                          //     width: 281.h,
+                          //     margin: EdgeInsets.only(left: 21.h, right: 72.h),
+                          //     child: RichText(
+                          //         text: TextSpan(children: [
+                          //           TextSpan(
+                          //               text:
+                          //                   "Heyhey.net - Free Download for Games & ApAnd",
+                          //               style: theme.textTheme.labelMedium),
+                          //           TextSpan(
+                          //               text: " Free Download for Games ...",
+                          //               style: theme.textTheme.labelMedium)
+                          //         ]),
+                          //         textAlign: TextAlign.left)),
+                          // SizedBox(height: 1.v),
+                          // _buildShowChallenge1(context),
                           Divider()
                         ])))));
   }
@@ -136,16 +200,14 @@ class FindChallengePageScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildEight(BuildContext context) {
     return Align(
-        alignment: Alignment.center,
+        alignment: Alignment.centerLeft,
         child: SizedBox(
-            height: 176.v,
-            width: 335.h,
             child: Stack(alignment: Alignment.topRight, children: [
               CustomImageView(
                   imagePath: ImageConstant.imgRectangle4864,
-                  height: 176.v,
+                  width: MediaQuery.of(context).size.width-40.h,
                   radius: BorderRadius.circular(8.h),
-                  alignment: Alignment.center),
+                  alignment: Alignment.centerLeft),
               _buildParticipants12(context)
             ])));
   }
@@ -158,18 +220,10 @@ class FindChallengePageScreen extends StatelessWidget {
         margin: EdgeInsets.only(left: 20.h, right: 19.h),
         buttonTextStyle: CustomTextStyles.titleSmallWhiteA700,
         onPressed: () {
-          onTapShowChallenge(context);
+          openBox(context);
+          //onTapShowChallenge(context);
         },
         alignment: Alignment.center);
-  }
-
-  /// Section Widget
-  Widget _buildParticipants13(BuildContext context) {
-    return CustomElevatedButton(
-        width: 87.h,
-        text: "Participants: 12",
-        buttonStyle: CustomButtonStyles.fillWhiteATL5,
-        buttonTextStyle: theme.textTheme.labelSmall!);
   }
 
   /// Section Widget
@@ -178,11 +232,12 @@ class FindChallengePageScreen extends StatelessWidget {
         alignment: Alignment.center,
         child: Container(
             width: 335.h,
+            height: 176.h,
             margin: EdgeInsets.symmetric(horizontal: 20.h),
             padding: EdgeInsets.symmetric(vertical: 9.v),
             decoration: AppDecoration.fillBlueGray
                 .copyWith(borderRadius: BorderRadiusStyle.roundedBorder8),
-            child: _buildParticipants13(context)));
+            child: _buildParticipants12(context)));
   }
 
   /// Section Widget
@@ -204,4 +259,88 @@ class FindChallengePageScreen extends StatelessWidget {
   onTapShowChallenge(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.dialogBoxScreen);
   }
+  openBox(BuildContext context){
+    return showDialog(context: context, builder: (context)=>AlertDialog(
+      content:Container(
+        child: Scaffold(
+          resizeToAvoidBottomInset: true,
+          appBar: _buildAppBars(context),
+          backgroundColor: theme.colorScheme.onPrimaryContainer,
+          body: Container(
+
+            width: MediaQuery.of(context).size.width,
+            padding: EdgeInsets.symmetric(
+              horizontal: 20.h,
+              vertical: 5.v,
+            ),
+            child: Column(
+              children: [
+                CustomImageView(
+                  imagePath: ImageConstant.imgYoungManWorking,
+                  width: 85.h,
+                ),
+                Container(
+                  height: 6.v,
+                  width: 174.h,
+                  decoration: BoxDecoration(
+                    color: appTheme.blueGray100.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(
+                      87.h,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20.v),
+                CustomTextFormField(
+                  controller: shareyourfeelingongrController,
+                  hintText:
+                  "Share your feeling on group to encourage other participants ",
+                  textInputAction: TextInputAction.done,
+                  maxLines: 3,
+                ),
+                SizedBox(height: 9.v),
+                Padding(padding: EdgeInsets.only(top: 10.h),
+                child: _buildPost(context),),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ));
+  }
+
+
+  /// Section Widget
+  Widget _buildPost(BuildContext context) {
+    return CustomElevatedButton(
+      height: 39.v,
+      text: "Post",
+      margin: EdgeInsets.only(
+        bottom: 27.v,
+      ),
+      buttonStyle: CustomButtonStyles.fillBlueA,
+      buttonTextStyle: CustomTextStyles.labelLargeWhiteA700Bold,
+    );
+  }
+  PreferredSizeWidget _buildAppBars(BuildContext context) {
+    return CustomAppBar(
+      height: 50.v,
+      title: AppbarSubtitle(
+        text: "Keep putting effort, Proud of you",
+        margin: EdgeInsets.only(left: 20.h),
+      ),
+      actions: [
+        Padding(padding: EdgeInsets.only(left: 5.v,right: 5.v,top: 5.h,bottom: 5.h),
+        child: AppbarTrailingIconbutton(
+          onTap: (){
+            onTapArrowLeft(context);
+          },
+          imagePath: ImageConstant.imgClose,
+          margin: EdgeInsets.all(10.h),
+        ),),
+
+      ],
+    );
+  }
+
+
 }
