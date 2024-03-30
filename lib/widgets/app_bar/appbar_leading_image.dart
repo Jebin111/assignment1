@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trail_app/core/app_export.dart';
+import 'package:assignment2/core/app_export.dart';
 
 // ignore: must_be_immutable
 class AppbarLeadingImage extends StatelessWidget {
@@ -28,7 +28,8 @@ class AppbarLeadingImage extends StatelessWidget {
         padding: margin ?? EdgeInsets.zero,
         child: CustomImageView(
           imagePath: imagePath,
-          width: 10.h,
+          height: 20.adaptSize,
+          width: 20.adaptSize,
           fit: BoxFit.contain,
         ),
       ),

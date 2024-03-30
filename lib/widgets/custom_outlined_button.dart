@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import '../core/app_export.dart';
 import 'base_button.dart';
 
-class CustomElevatedButton extends BaseButton {
-  CustomElevatedButton({
+class CustomOutlinedButton extends BaseButton {
+  CustomOutlinedButton({
     Key? key,
     this.decoration,
     this.leftIcon,
     this.rightIcon,
-    EdgeInsets? margin,
+    this.label,
     VoidCallback? onPressed,
     ButtonStyle? buttonStyle,
-    Alignment? alignment,
     TextStyle? buttonTextStyle,
     bool? isDisabled,
+    Alignment? alignment,
     double? height,
     double? width,
+    EdgeInsets? margin,
     required String text,
   }) : super(
           text: text,
@@ -24,8 +25,8 @@ class CustomElevatedButton extends BaseButton {
           isDisabled: isDisabled,
           buttonTextStyle: buttonTextStyle,
           height: height,
-          width: width,
           alignment: alignment,
+          width: width,
           margin: margin,
         );
 
@@ -35,22 +36,24 @@ class CustomElevatedButton extends BaseButton {
 
   final Widget? rightIcon;
 
+  final Widget? label;
+
   @override
   Widget build(BuildContext context) {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: buildElevatedButtonWidget,
+            child: buildOutlinedButtonWidget,
           )
-        : buildElevatedButtonWidget;
+        : buildOutlinedButtonWidget;
   }
 
-  Widget get buildElevatedButtonWidget => Container(
+  Widget get buildOutlinedButtonWidget => Container(
         height: this.height ?? 48.v,
         width: this.width ?? double.maxFinite,
         margin: margin,
         decoration: decoration,
-        child: ElevatedButton(
+        child: OutlinedButton(
           style: buttonStyle,
           onPressed: isDisabled ?? false ? null : onPressed ?? () {},
           child: Row(
@@ -60,7 +63,7 @@ class CustomElevatedButton extends BaseButton {
               leftIcon ?? const SizedBox.shrink(),
               Text(
                 text,
-                style: buttonTextStyle ?? CustomTextStyles.titleMediumWhiteA700,
+                style: buttonTextStyle ?? theme.textTheme.titleMedium,
               ),
               rightIcon ?? const SizedBox.shrink(),
             ],

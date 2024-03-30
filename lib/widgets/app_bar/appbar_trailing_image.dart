@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:assignment2/core/app_export.dart';
 
 // ignore: must_be_immutable
-class AppbarTitle extends StatelessWidget {
-  AppbarTitle({
+class AppbarTrailingImage extends StatelessWidget {
+  AppbarTrailingImage({
     Key? key,
-    required this.text,
+    this.imagePath,
     this.margin,
     this.onTap,
   }) : super(
           key: key,
         );
 
-  String text;
+  String? imagePath;
 
   EdgeInsetsGeometry? margin;
 
@@ -20,17 +20,17 @@ class AppbarTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         onTap?.call();
       },
       child: Padding(
         padding: margin ?? EdgeInsets.zero,
-        child: Text(
-          text,
-          style: theme.textTheme.titleSmall!.copyWith(
-            color: appTheme.black900,
-          ),
+        child: CustomImageView(
+          imagePath: imagePath,
+          height: 20.adaptSize,
+          width: 20.adaptSize,
+          fit: BoxFit.contain,
         ),
       ),
     );

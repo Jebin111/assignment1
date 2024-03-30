@@ -90,9 +90,16 @@ class CustomTextFormField extends StatelessWidget {
           scrollPadding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           controller: controller,
-          focusNode: focusNode ?? FocusNode(),
+          focusNode: focusNode,
+          onTapOutside: (event) {
+            if (focusNode != null) {
+              focusNode?.unfocus();
+            } else {
+              FocusManager.instance.primaryFocus?.unfocus();
+            }
+          },
           autofocus: autofocus!,
-          style: textStyle ?? theme.textTheme.bodySmall,
+          style: textStyle ?? theme.textTheme.bodyLarge,
           obscureText: obscureText!,
           textInputAction: textInputAction,
           keyboardType: textInputType,
@@ -103,38 +110,29 @@ class CustomTextFormField extends StatelessWidget {
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: hintStyle ?? theme.textTheme.bodySmall,
+        hintStyle: hintStyle ?? theme.textTheme.bodyLarge,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
         isDense: true,
-        contentPadding: contentPadding ?? EdgeInsets.all(14.h),
-        fillColor: fillColor ?? appTheme.whiteA700.withOpacity(0.15),
+        contentPadding: contentPadding ?? EdgeInsets.all(13.h),
+        fillColor: fillColor ?? appTheme.blueGray400Bf.withOpacity(0.18),
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.h),
-              borderSide: BorderSide(
-                color: appTheme.blueGray10001,
-                width: 1,
-              ),
+              borderRadius: BorderRadius.circular(25.h),
+              borderSide: BorderSide.none,
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.h),
-              borderSide: BorderSide(
-                color: appTheme.blueGray10001,
-                width: 1,
-              ),
+              borderRadius: BorderRadius.circular(25.h),
+              borderSide: BorderSide.none,
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.h),
-              borderSide: BorderSide(
-                color: appTheme.blueGray10001,
-                width: 1,
-              ),
+              borderRadius: BorderRadius.circular(25.h),
+              borderSide: BorderSide.none,
             ),
       );
 }

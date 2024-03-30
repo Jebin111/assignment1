@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return MaterialApp(
           theme: theme,
-          title: 'trail_app',
+          title: 'assignment2',
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.findChallengePageScreen,
+          initialRoute: AppRoutes.questionnaireScreen,
           routes: AppRoutes.routes,
         );
       },
